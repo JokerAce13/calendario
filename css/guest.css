@@ -1,0 +1,48 @@
+.guestContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.guest-list {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    margin-block: .75rem;
+}
+
+.guestControl {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.guest {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.guestDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.guestDetails span {
+    font: var(--body2-regular);
+}
+
+.guest-role {
+    color: var(--gray20);
+}
+
+#guestArea {
+    align-self: flex-start;
+    margin-block-start: .5rem;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    .guest-name {
+        color: var(--white);
+    }
+  }

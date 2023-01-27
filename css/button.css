@@ -1,0 +1,100 @@
+.button {
+    border: 1px solid transparent;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    /* display: inline-block;
+    vertical-align: middle;
+    text-align: center; */
+    font: var(--button);
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: currentColor;
+    border-radius: .25rem;
+    outline: none;
+}
+
+/* .button i {
+    color: var(--back);
+} */
+
+.button:active {
+    transform: scale(.9);
+}
+
+.button.is-primary {
+    background-color: var(--blue10);
+    color: var(--white);
+}
+
+.button.is-secondary {
+    border: 1px solid var(--gray20)
+}
+
+.button.is-primary:hover,
+.button.is-primary:focus {
+    background-color: var(--blue30);
+}
+
+.button:hover,
+.button:focus,
+.button.is-secondary:hover,
+.button.is-secondary:focus,
+.button.is-rounded:hover,
+.button.is-rounded:focus,
+.button.is-compact:hover,
+.button.is-compact:focus {
+    background-color: var(--gray10);
+}
+
+.button.is-rounded {
+    border-radius: 1.25rem;
+    background-color: var(--white);
+    color: var(--blue10);
+}
+
+.button.is-rounded i {
+    color: var(--black);
+}
+
+.button i {
+    font-size: 1.5rem;
+}
+
+.button i, .button span {
+    vertical-align: middle;
+}
+
+.button.is-compact {
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.button.is-shadowed {
+    box-shadow: 1.0719px 30.9815px 92px rgba(0, 0, 0, 0.0274815), 0.412881px 11.9336px 29.3037px rgba(0, 0, 0, 0.0425185), 0.0873403px 2.52442px 7.4963px rgba(0, 0, 0, 0.07);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+
+    .button.is-secondary:hover,
+    .button.is-secondary:focus,
+    .button.is-compact:hover,
+    .button.is-compact:focus {
+        color: var(--black);
+    }
+
+    .button:hover i,
+    .button:focus i,
+    .button.is-secondary:hover i,
+    .button.is-secondary:focus i,
+    .button.is-rounded:hover i,
+    .button.is-rounded:focus i,
+    .button.is-compact:hover i,
+    .button.is-compact:focus i {
+        color: var(--black);
+    }
+}

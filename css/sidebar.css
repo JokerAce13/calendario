@@ -1,0 +1,52 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+}
+
+#btn-create-compact {
+    z-index: 3;
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .miniCalendar,
+    .contact-search,
+    .myCalendars {
+        display: none;
+    }
+
+    #btn-create-compact {
+        display: block;
+    }
+
+    #btn-create-rounded {
+        display: none;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+
+    .calendarDay {
+        background-color: var(--gray50);
+    }
+
+    #btn-create-compact {
+        background-color: var(--white);
+        color: var(--gray50);
+    }
+
+    #btn-create-compact:hover {
+        background-color: var(--gray10);
+    }
+
+    #btn-create-compact i {
+        color: var(--gray50);
+    }
+
+    #btn-create-compact i:hover {
+        color: var(--blue10);
+    }
+}

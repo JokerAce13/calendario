@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>Calendario</title>
+    <!--Inicio - Configuración Favicon - Favicon Generation -->
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--Fin - Configuración Favicon - Favicon Generation -->
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="header-primary">
+        <div class="header-menu">
+          <a class="button is-compact " href="#">
+            <i class="icon-hamburguer-button"></i>
+          </a>
+          <div class="header-logo">
+            <a class="logo-img" aria-current="page" aria-label="Calendar" tabindex="-1">
+              <img src="images/only-logo.png" alt="Imagen del logo">
+            </a>
+            <span class="logo-name"><a href="./index.html" aria-label="Calendario por semana">Calendario</a></span>
+          </div>
+        </div>
+        <div class="calendarStatus">
+          <button class="button is-secondary">Hoy</button>
+          <span>
+            <a class="button is-compact" href="#" aria-label="Semana anterior">
+              <i class="icon-chevron-left" aria-hidden="true"></i>
+            </a>
+            <a class="button is-compact" href="#" aria-label="Siguiente semana">
+              <i class="icon-chevron-right" aria-hidden="true"></i>
+            </a>
+          </span>
+          <time class="calendarStatus-date" datetime="2023-01-27">27 Enero 2023</time>
+        </div>
+      </div>
+      <div class="header-secondary">
+        <select class="select" id="visualizationMode" onchange="ShowSelected()">
+          <option value="W">Semana</option>
+          <option value="D" selected>Día</option>
+        </select>
+        <a class="header-user" aria-current="page" aria-label="Calendar" tabindex="-1">
+          <img src="images/user.png" width="32" height="32" alt="Imagen del usuario">
+        </a>
+      </div>
+    </header>
+    <div class="sidebar">
+      <a id="btn-create-compact" class="button is-compact is-shadowed" href="#">
+        <i class="icon-plus"></i>
+      </a>
+      <a id="btn-create-rounded" class="button is-rounded is-shadowed" href="#" aria-label="Crear tarea">
+        <i class="icon-plus" aria-hidden="true"></i>
+        Crear
+      </a>
+      <div class="miniCalendar" aria-label="Calendario de navegación">
+        <div class="miniCalendar-status">
+          <time class="miniCalendar-date" datetime="2023-01">Enero 2023</time>
+          <div class="miniCalendar-actions">
+            <a class="button is-compact" href="#" aria-label="Mes anterior">
+              <i class="icon-chevron-left" aria-hidden="true"></i>
+            </a>
+            <a class="button is-compact" href="#" aria-label="Siguiente mes">
+              <i class="icon-chevron-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="miniCalendar-header">
+          <span class="miniCalendar-weekDay">D</span>
+          <span class="miniCalendar-weekDay">L</span>
+          <span class="miniCalendar-weekDay">M</span>
+          <span class="miniCalendar-weekDay">X</span>
+          <span class="miniCalendar-weekDay">J</span>
+          <span class="miniCalendar-weekDay">V</span>
+          <span class="miniCalendar-weekDay">S</span>
+        </div>
+        <div class="miniCalendar-month">
+          <div class="miniCalendar-monthDay">1</div>
+          <div class="miniCalendar-monthDay">2</div>
+          <div class="miniCalendar-monthDay">3</div>
+          <div class="miniCalendar-monthDay">4</div>
+          <div class="miniCalendar-monthDay">5</div>
+          <div class="miniCalendar-monthDay">6</div>
+          <div class="miniCalendar-monthDay">7</div>
+          <div class="miniCalendar-monthDay">8</div>
+          <div class="miniCalendar-monthDay">9</div>
+          <div class="miniCalendar-monthDay">10</div>
+          <div class="miniCalendar-monthDay">11</div>
+          <div class="miniCalendar-monthDay">12</div>
+          <div class="miniCalendar-monthDay">13</div>
+          <div class="miniCalendar-monthDay">14</div>
+          <div class="miniCalendar-monthDay">15</div>
+          <div class="miniCalendar-monthDay">16</div>
+          <div class="miniCalendar-monthDay">17</div>
+          <div class="miniCalendar-monthDay">18</div>
+          <div class="miniCalendar-monthDay">19</div>
+          <div class="miniCalendar-monthDay">20</div>
+          <div class="miniCalendar-monthDay">21</div>
+          <div class="miniCalendar-monthDay">22</div>
+          <div class="miniCalendar-monthDay">23</div>
+          <div class="miniCalendar-monthDay">24</div>
+          <div class="miniCalendar-monthDay">25</div>
+          <div class="miniCalendar-monthDay">26</div>
+          <div class="miniCalendar-monthDay is-selected">27</div>
+          <div class="miniCalendar-monthDay">28</div>
+          <div class="miniCalendar-monthDay">29</div>
+          <div class="miniCalendar-monthDay">30</div>
+          <div class="miniCalendar-monthDay">31</div>
+          <div class="miniCalendar-monthDay is-inactive">1</div>
+          <div class="miniCalendar-monthDay is-inactive">2</div>
+          <div class="miniCalendar-monthDay is-inactive">3</div>
+          <div class="miniCalendar-monthDay is-inactive">4</div>
+        </div>
+      </div>
+      <div class="contact-search">
+        <input id="search-input" class="search-bar" type="text" placeholder="Buscar personas"
+          oninput="hideSearchContactIcon()">
+        <img class="input-icon" src="icons/users.svg" width="16" height="16" alt="Icono de busqueda de personas">
+      </div>
+      <div class="myCalendars">
+        <details open>
+          <summary>Mis calendarios</summary>
+          <ul>
+            <li>
+              <i class="icon-check-square" aria-hidden="true"></i>
+              <span>Leonidas Esteban</span>
+            </li>
+            <li>
+              <i class="icon-check-square" aria-hidden="true"></i>
+              <span>Cumpleaños</span>
+            </li>
+            <li>
+              <i class="icon-check-square" aria-hidden="true"></i>
+              <span>Tareas</span>
+            </li>
+            <li>
+              <i class="icon-check" aria-hidden="true"></i>
+              <span>Recordatorios</span>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </div>
+    <main class="calendar">
+      <div class="currentTime-day is-day-mode"></div>
+      <div class="calendar-day">
+        <div class="timezoneCell">GMT-5</div>
+        <h2 class="calendarDay is-unique-day is-selected">
+          <a id="calendarDay-day" aria-label="Viernes 27 de Enero">
+            <time datetime="2023-01-27">
+              <span id="calendarDay-dayName">VIE</span><br>
+              <span id="calendarDay-dayNumber">27</span>
+            </time>
+          </a>
+        </h2>
+
+        <!-- Fila - 01 -->
+        <span class="hourCell"></span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 02 -->
+        <span class="hourCell">1 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 03 -->
+        <span class="hourCell">2 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 04 -->
+        <span class="hourCell">3 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 05 -->
+        <span class="hourCell">4 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 06 -->
+        <span class="hourCell">5 AM</span>
+        <div class="taskCell">
+          <div class="task" aria-label="de 05:00 a 06:00, hacer ejercicio">
+            <p>Hacer ejercicio</p>
+            <p>
+              <time datetime="05:00">5</time> - <time datetime="06:00">6 am</time>
+            </p>
+          </div>
+        </div>
+
+        <!-- Fila - 07 -->
+        <span class="hourCell">6 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 08 -->
+        <span class="hourCell">7 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 09 -->
+        <span class="hourCell">8 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 10 -->
+        <span class="hourCell">8 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 11 -->
+        <span class="hourCell">9 AM</span>
+        <div class="taskCell">
+          <div class="task is-pending" aria-label="de 09:00 a 10:00, Team Daily">
+            <p>Team Daily</p>
+            <p>
+              <time datetime="09:00">9</time> - <time datetime="10:00">10 am</time>
+            </p>
+          </div>
+        </div>
+
+        <!-- Fila - 12 -->
+        <span class="hourCell">10 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 13 -->
+        <span class="hourCell">11 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 14 -->
+        <span class="hourCell">12 AM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 15 -->
+        <span class="hourCell">1 PM</span>
+        <div class="taskCell">
+          <div class="task is-pending" aria-label="de 01:00 a 02:00, Design meet">
+            <p>Design meet</p>
+            <p>
+              <time datetime="01:00">1</time> - <time datetime="2:00">2 pm</time>
+            </p>
+          </div>
+        </div>
+
+        <!-- Fila - 16 -->
+        <span class="hourCell">2 PM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 17 -->
+        <span class="hourCell">3 PM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 18 -->
+        <span class="hourCell">4 PM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 19 -->
+        <span class="hourCell">5 PM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 20 -->
+        <span class="hourCell">6 PM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 21 -->
+        <span class="hourCell">7 PM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 22 -->
+        <span class="hourCell">8 PM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 23 -->
+        <span class="hourCell">9 PM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 24 -->
+        <span class="hourCell">10 PM</span>
+        <div class="taskCell"></div>
+
+        <!-- Fila - 25 -->
+        <span class="hourCell">11 PM</span>
+        <div class="taskCell"></div>
+
+      </div>
+    </main>
+  </div>
+  <dialog class="modal">
+    <form action="" class="createTask">
+      <div class="input is-outstanding">
+        <div class="input-body">
+          <input type="text" name="input-title" id="" placeholder="Añade un titulo" required>
+        </div>
+      </div>
+      <div class="input">
+        <i class="icon-clock"></i>
+        <div class="input-body">
+          <input type="date" name="input-date" id="">
+          <input type="time" name="input-initial-time" id="">
+          <input type="time" name="input-final-time" id="">
+        </div>
+      </div>
+      <div class="input">
+        <i id="guestArea" class="icon-users"></i>
+        <div class="input-body guestContainer">
+          <input type="text" list="guests" name="input-guests" id="" placeholder="Agregar invitados" required>
+          <datalist id="guests">
+            <option value="Leandro"></option>
+            <option value="Marcela"></option>
+            <option value="Dante"></option>
+          </datalist>
+
+          <div class="guest-list">
+            <div class="guestControl">
+              <div class="guest">
+                <img src="images/maria.png" alt="Imagen de maria">
+                <div class="guestDetails">
+                  <span class="guest-name">Maria Dolores</span>
+                  <span class="guest-role">Organizador</span>
+                </div>
+              </div>
+            </div>
+            <div class="guestControl">
+              <div class="guest">
+                <img src="images/ana.png" alt="Imagen de ana">
+                <div class="guestDetails">
+                  <span class="guest-name">Ana Zepeda</span>
+                  <span class="guest-role">Invitado</span>
+                </div>
+              </div>
+              <div class="guestActions">
+                <i class="icon-close"></i>
+              </div>
+            </div>
+            <div class="guestControl">
+              <div class="guest">
+                <img src="images/tadeo.png" alt="Imagen de tadeo">
+                <div class="guestDetails">
+                  <span class="guest-name">Tadeo Lopez</span>
+                  <span class="guest-role">Invitado</span>
+                </div>
+              </div>
+              <div class="guestActions">
+                <i class="icon-close"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="input">
+        <i class="icon-video"></i>
+        <div class="button-body">
+          <button class="button is-primary">Agregar una videoconferencia de Google Meet</button>
+        </div>
+      </div>
+      <div class="input">
+        <i class="icon-gps"></i>
+        <div class="input-body">
+          <input type="text" name="input-location" id="" placeholder="Agregar ubicación" required>
+        </div>
+      </div>
+      <div class="input">
+        <i class="icon-settings"></i>
+        <div class="input-body">
+          <input type="file" name="input-attachments" id="input-video" multiple >
+        </div>
+      </div>
+      <div class="input">
+        <i class="icon-text"></i>
+        <div class="input-body">
+          <textarea name="input-details" placeholder="Agregar descripción" id="" cols="40" rows="2"></textarea>
+        </div>
+      </div>
+    </form>
+    <div class="modal-actions">
+      <button id="close-modal" class="button">Cancelar</button>
+      <button class="button is-primary">Guardar</button>
+    </div>
+  </dialog>
+  <script src="./js/app-day-mode.js" type="module"></script>
+  <script src="./js/utilities.js"></script>
+</body>
+
+</html>

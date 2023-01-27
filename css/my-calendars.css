@@ -1,0 +1,28 @@
+.myCalendars {
+    inline-size: 100%;
+}
+
+.myCalendars summary {
+    font: var(--body1-medium);
+    background-image: url(../icons/chevron-down.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.myCalendars li {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    text-decoration: none;
+}
+
+.myCalendars ul {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding-inline-start: 0px;
+    margin: 0;
+    margin-block: .5rem;
+}

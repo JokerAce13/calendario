@@ -1,0 +1,23 @@
+.calendarStatus {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.calendarStatus-date {
+    font: var(--subtitle1)
+}
+
+@media screen and (max-width: 768px) {
+    .calendarStatus {
+        gap: .5rem;
+    }
+
+    .calendarStatus-date {
+        font: var(--body1-regular)
+    }
+
+    .calendarStatus .button.is-compact {
+        inline-size: 20px;
+    }
+}
