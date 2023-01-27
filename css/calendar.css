@@ -1,9 +1,9 @@
-@import "/css/task.css";
-@import "/css/task-cell.css";
-@import "/css/calendar-day.css";
-@import "/css/timezone-cell.css";
-@import "/css/hour-cell.css";
-@import "/css/current-time.css";
+@import "../css/task.css";
+@import "../css/task-cell.css";
+@import "../css/calendar-day.css";
+@import "../css/timezone-cell.css";
+@import "../css/hour-cell.css";
+@import "../css/current-time.css";
 
 .calendar {
     --minCellBlockSize: 4rem;

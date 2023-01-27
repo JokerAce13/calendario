@@ -1,4 +1,4 @@
-@import "/css/guest.css";
+@import "../css/guest.css";
 
 .modal {
     flex-direction: column;
